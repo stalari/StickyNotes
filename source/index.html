@@ -3,10 +3,54 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script src="lib/js/angular.min.js" type="text/javascript"></script>
-    <script src="app/js/app.js" type="text/javascript"></script>
+    <script src="lib/js/angular-route.js"> </script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
     <link href="app/style/default.css" rel="stylesheet" type="text/css">
+    <script src="app/js/app.js" type="text/javascript"></script>
 </head>
-<body>
+<body ng-controller="commonComponents">
+<!-- Header nav bar -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div>
+      <ul class="nav navbar-nav navbar-left">
+	      <li><a href="#" id="side" ng-click="showHideSideBar()"><span class="glyphicon glyphicon-align-justify"></span></a></li>
+	      <li><a class="navbar-brand" href="#">StickyNotes</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">All notes saved</a></li>
+        <li>
+					<a href="#"><span class="glyphicon glyphicon-list"></span></a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-th-large"></span></a>
+				</li>
+      </ul>  
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid " ng-show="showSideBar"  id="sidebar" >
+  <div class="row-fluid">
+    <ul class="nav nav-pills nav-stacked">
+  		<li><a href="#"><span class="glyphicon glyphicon-tasks"></span>  Notes</a></li>
+		  <li><a href="#"><span class="glyphicon glyphicon-time"></span>  Reminders</a></li>
+		  <li><a href="#"><span class="glyphicon glyphicon-floppy-save"></span>  Archive</a></li>
+		  <li><a href="#"><span class="glyphicon glyphicon-trash"></span>  Trash</a></li>
+    </ul>
+    <div class="line"></div>
+    <ul class="nav nav-pills nav-stacked">
+  		<li><a href="#">Help</a></li>
+		  <li><a href="#">Feedback</a></li>
+    </ul>
+  </div>
+</div>
 
 <div ng-view></div>
 

@@ -1,0 +1,110 @@
+.navbar-default {
+	background-color: #FFCD35;
+	border-color: #e7e7e7;
+	font-size: 14px;
+}
+
+body { 
+	padding-top: 70px; 
+	background-color: #e8e8e8;
+	color: #666;
+	direction: ltr;
+	font-family: 'Roboto','Droid Sans',arial,sans-serif;
+	font-size: 15px;
+	margin: 0;
+	min-width: 360px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#sidebar{
+  float:left;   
+	background-color: white;
+	z-index: 500;
+	position: fixed;
+	background-clip: padding-box;
+	border: solid transparent;
+	border-width: 1px 1px 1px 6px;
+	min-height: 500px;
+	padding: 100px 0 0;
+	box-shadow: 1px 1px 7px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+	min-width: 200px;
+	font-size: 14px;
+	padding: 13px 15px 12px 30px;
+}
+
+a {
+color: #777;
+text-decoration: none;
+}
+
+.line {
+	width: 100%;
+	height: 1px;
+	background: rgba(19, 18, 18, 0.29);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.inner-views{
+    border-style: none;
+    overflow: auto;
+    background-color: transparent;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    margin-top: 15px;
+}
+
+.note {
+	background-color: white;
+	display: inline-block !important;
+	margin: 10px 10px 10px 10px;
+	padding: 3px 3px 3px 3px;
+	overflow: hidden;
+	display: block;
+	width: 200px;
+	height: 250px;
+	background-clip: padding-box;
+
+}
+
+.note-title {
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+}
+
+.note-data {
+	padding: 3px 3px 3px 3px;
+}
+
+.true {
+	text-decoration: line-through;
+}
+
+.note-interface {
+	
+  background-color: white;
+  display: block;
+  width: 600px;
+	background-clip: padding-box;
+
+}
+
+.note-interface input[type='text'] {
+	border-color: transparent;
+	border-style: solid;
+	border-width: thin;
+	padding: 3px;
+	width: 40%;
+}
+
+.footer {
+	margin: 3px;
+}
+.note-interface-pull-right {
+	margin-left: 500px;
+}
+

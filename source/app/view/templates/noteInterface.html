@@ -1,0 +1,17 @@
+<div class="note-interface">
+  <div class="container">
+  	<div class="note-title"><input type="text" ng-model="title" placeholder="Title"/></div>
+  	<div class="note-data" ng-hide="addListNote"><input type="text" ng-model="addNote" placeholder="Add Note"/></div>
+  	<div class="note-data" ng-show="addListNote" ng-repeat="list in newList">
+  		<input type="checkbox" ng-model="list.selected"><input class="{{list.selected}}" type="text" ng-model="list.value" placeholder="Add List Note"/></span>
+  	</div>
+  	<div class="footer">
+  		<span class="pull-left">
+  			<a  ng-click="toggleList()"><span class="glyphicon glyphicon-th-list"></span></a>
+  		</span>
+  		<span class="note-interface-pull-right">
+  			<button class="btn btn-default btn-xs" ng-click="createNote()">Done</button>
+  		</span>
+  	</div>
+  </div>
+</div>
