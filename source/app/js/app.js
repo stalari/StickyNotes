@@ -8,10 +8,16 @@ var app = angular.module("StickyNotesApplication", ['ngRoute']).config(function 
 
 });
 
-app.directive('noteInterface', function(){
+app.directive('addNote', function(){
   return {
     restrict: 'AE',
-    templateUrl: "app/view/templates/noteInterface.html",
+    templateUrl: "app/view/templates/addnote.html",
+  }
+})
+.directive('notesTile', function(){
+  return {
+    restrict: 'AE',
+    templateUrl: "app/view/templates/notestile.html",
   }
 });
 
@@ -24,6 +30,9 @@ app.controller("commonComponents", function ($scope) {
 })
 .controller("notes", function ($scope) {
 	$scope.addListNote = false;
+	$scope.editIndex = undefined;
+	$scope.color = 'white';
+	$scope.colors = ['white', 'blue', 'green', 'orange', 'yellow'];
 	$scope.newList = [{value: '', selected: false}];
 	$scope.notes = JSON.parse(localStorage.getItem("StickyNotesApplication")) || [];
 	//$scope.notes = [{type: 'Note', data: 'test the note', title: 'Note'}, {type: 'ListNote', data: [{value: 'item1', selected: true}, {value: 'item2', selected: false}, {value: 'item3', selected: false}], title: 'List Note'}/*, {type: 'Image', data: 'image note test', title: 'Image Note', image: ''}*/];
@@ -31,15 +40,35 @@ app.controller("commonComponents", function ($scope) {
 	$scope.createNote = function(){
 		if($scope.addListNote){
 			$scope.newList.pop();
-			$scope.notes.push({type: 'ListNote', data: $scope.newList, title: $scope.title});
+			$scope.editIndex === undefined ? $scope.notes.push({type: 'ListNote', data: $scope.newList, title: $scope.title, color: $scope.color}) : $scope.notes[$scope.editIndex] = {type: 'ListNote', data: $scope.newList, title: $scope.title, color: $scope.color};
 		}else{
-			$scope.notes.push({type: 'Note', data: $scope.addNote, title: $scope.title});
+			$scope.editIndex === undefined ? $scope.notes.push({type: 'Note', data: $scope.addNote, title: $scope.title, color: $scope.color}) : $scope.notes[$scope.editIndex] = {type: 'Note', data: $scope.addNote, title: $scope.title, color: $scope.color};
 		}
 		localStorage.setItem("StickyNotesApplication", JSON.stringify($scope.notes));
+		$scope.clearValues();
+
+	}
+
+	$scope.clearValues = function(){
 		$scope.newList = [{value: '', selected: false}];
 		$scope.addNote = "";
 		$scope.title = "";
+		$scope.editIndex = undefined;
+		$scope.addListNote = false;
+		$scope.color = 'white';
+	}
 
+	$scope.prepareModal = function(index){
+		$scope.editIndex = index;
+		if($scope.notes[index].type === 'Note'){
+			$scope.newList = [{value: '', selected: false}];
+			$scope.addNote = $scope.notes[index].data;
+		}else{
+			$scope.addListNote = true;
+			$scope.newList = $scope.notes[index].data;
+		}
+		$scope.title =  $scope.notes[index].title;
+		$scope.color = 	$scope.notes[index].color;
 	}
 
 	$scope.toggleList = function(){
@@ -50,6 +79,15 @@ app.controller("commonComponents", function ($scope) {
 		  if(val != ''){
        $scope.newList.push({value: '', selected: false});
 		  }
-   });
+  });
+
+  $scope.deleteNote = function (index){
+  	$scope.notes.splice(index, 1);    
+  	$scope.updateNotes();
+	}
+
+  $scope.updateNotes = function(){
+  	localStorage.setItem("StickyNotesApplication", JSON.stringify($scope.notes));
+  }
 
 });

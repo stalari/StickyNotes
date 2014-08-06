@@ -1,5 +1,5 @@
-<div class="note-interface">
-  <div class="container">
+<div class="add-note" ng-class="color">
+  <div class="container" >
   	<div class="note-title"><input type="text" ng-model="title" placeholder="Title"/></div>
   	<div class="note-data" ng-hide="addListNote"><input type="text" ng-model="addNote" placeholder="Add Note"/></div>
   	<div class="note-data" ng-show="addListNote" ng-repeat="list in newList">
@@ -8,9 +8,10 @@
   	<div class="footer">
   		<span class="pull-left">
   			<a  ng-click="toggleList()"><span class="glyphicon glyphicon-th-list"></span></a>
+        <select ng-model="color" ng-options="col as col for col in colors"></select>
   		</span>
   		<span class="note-interface-pull-right">
-  			<button class="btn btn-default btn-xs" ng-click="createNote()">Done</button>
+  			<button class="btn btn-default btn-xs" ng-click="createNote()" data-dismiss="modal">Done</button>
   		</span>
   	</div>
   </div>

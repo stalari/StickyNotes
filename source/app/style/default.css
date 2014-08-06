@@ -68,6 +68,7 @@ text-decoration: none;
 	width: 200px;
 	height: 250px;
 	background-clip: padding-box;
+	overflow:scroll;
 
 }
 
@@ -84,7 +85,7 @@ text-decoration: none;
 	text-decoration: line-through;
 }
 
-.note-interface {
+.add-note {
 	
   background-color: white;
   display: block;
@@ -93,7 +94,8 @@ text-decoration: none;
 
 }
 
-.note-interface input[type='text'] {
+.add-note input[type='text'] {
+	background-color: transparent;
 	border-color: transparent;
 	border-style: solid;
 	border-width: thin;
@@ -104,7 +106,56 @@ text-decoration: none;
 .footer {
 	margin: 3px;
 }
+
+.note-footer {
+	margin: 3px;
+	margin-top: 20px;
+}
+
+.note-body {
+	margin: 3px;
+}
 .note-interface-pull-right {
-	margin-left: 500px;
+	margin-left: 434px;
+}
+
+.modal-lg {
+    width: 626px;
+}
+
+.white{
+  background-color: white;
+} 
+.blue{
+  background-color: #92E4C9;
+} 
+.green{
+  background-color: #C9EA5D;
+} 
+.orange{
+  background-color: #FFC94E;
+} 
+.yellow{
+  background-color: #F1F14E;
+} 
+
+select {
+    -moz-appearance: none;
+    background: none repeat scroll 0 0 #f8f8f8;
+    border: medium none;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #888;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    outline: medium none;
+    padding: 0;
+}
+
+.btn-default {
+    background-color: transparent;
+    border-color: #ccc;
+    color: #333;
 }
 
