@@ -1,0 +1,18 @@
+{
+  "name": "angular-mocks",
+  "version": "1.3.0-build.3028+sha.fcd76d2",
+  "main": "./angular-mocks.js",
+  "dependencies": {
+    "angular": "1.3.0-build.3028+sha.fcd76d2"
+  },
+  "homepage": "https://github.com/angular/bower-angular-mocks",
+  "_release": "1.3.0-build.3028+sha.fcd76d2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.3.0-build.3028+sha.fcd76d2",
+    "commit": "840f5c932f562102bf31648c023409a86dfeb0ba"
+  },
+  "_source": "git://github.com/angular/bower-angular-mocks.git",
+  "_target": "~1.3.0",
+  "_originalSource": "angular-mocks"
+}
