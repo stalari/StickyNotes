@@ -72,6 +72,15 @@ text-decoration: none;
 
 }
 
+.note-tile-true {
+width: 600px;
+height: 80%;
+left: 10%;
+top: 10%;
+margin-left: 192px;
+display: block !important;
+}
+
 .note-title {
 	font-weight: bold;
 	padding: 2px 2px 2px 2px;

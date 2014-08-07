@@ -21,16 +21,22 @@ app.directive('addNote', function(){
   }
 });
 
-app.controller("commonComponents", function ($scope) {
+app.controller("commonComponents", function ($scope, $rootScope) {
+	$rootScope.tile = 'note-tile-false';
 	$scope.showHideSideBar = function(){
 		$scope.showSideBar = $scope.showSideBar ? false : true;
 	}
 
+	$scope.setTile = function(val){
+		$rootScope.tile = val;
+	}
+
 
 })
-.controller("notes", function ($scope) {
+.controller("notes", function ($scope, $rootScope) {
 	$scope.addListNote = false;
 	$scope.editIndex = undefined;
+	//$scope.tile = $rootScope.tile;
 	$scope.color = 'white';
 	$scope.colors = ['white', 'blue', 'green', 'orange', 'yellow'];
 	$scope.newList = [{value: '', selected: false}];
@@ -80,6 +86,10 @@ app.controller("commonComponents", function ($scope) {
        $scope.newList.push({value: '', selected: false});
 		  }
   });
+
+  $rootScope.$watch('tile', function(val){
+  	$scope.tile = $rootScope.tile;
+  })
 
   $scope.deleteNote = function (index){
   	$scope.notes.splice(index, 1);    
