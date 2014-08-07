@@ -159,3 +159,7 @@ select {
     color: #333;
 }
 
+.pointer{
+	cursor: pointer;
+}
+

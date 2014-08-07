@@ -90,4 +90,8 @@ app.controller("commonComponents", function ($scope) {
   	localStorage.setItem("StickyNotesApplication", JSON.stringify($scope.notes));
   }
 
+  $scope.removeList = function(index){
+  	$scope.newList.splice(index, 1);
+  }
+
 });
