@@ -125,7 +125,7 @@ display: block !important;
 	margin: 3px;
 }
 .note-interface-pull-right {
-	margin-left: 434px;
+	margin-left: 430px;
 }
 
 .modal-lg {
@@ -170,5 +170,11 @@ select {
 
 .pointer{
 	cursor: pointer;
+}
+
+img {
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
 }
 

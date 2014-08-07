@@ -1,15 +1,32 @@
 <div class="add-note" ng-class="color">
   <div class="container" >
   	<div class="note-title"><input type="text" ng-model="title" placeholder="Title"/></div>
-  	<div class="note-data" ng-hide="addListNote"><input type="text" ng-model="addNote" placeholder="Add Note"/></div>
-  	<div class="note-data" ng-show="addListNote" ng-repeat="list in newList track by $index">
-  		<input type="checkbox" ng-model="list.selected"><input class="{{list.selected}}" type="text" ng-model="list.value" placeholder="Add List Note"/></span>
-      <span ng-click="removeList($index)" class="pointer">x</span>
-  	</div>
+  	<div ng-hide="addImageNote">
+      <div class="note-data" ng-hide="addListNote"><input type="text" ng-model="addNote" placeholder="Add Note"/></div>
+    	<div class="note-data" ng-show="addListNote" ng-repeat="list in newList track by $index">
+    		<input type="checkbox" ng-model="list.selected"><input class="{{list.selected}}" type="text" ng-model="list.value" placeholder="Add List Note"/></span>
+        <span ng-click="removeList($index)" class="pointer">x</span>
+    	</div>
+    </div>
+    <div ng-show="addImageNote">
+      <div class="note-data">
+        <input type="text" ng-model="addNote" placeholder="Add Note"/>
+      </div>
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+          <img ng-src="{{noteImg}}"></img>
+        </div>
+        <div>
+          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..." id="test"></span>
+          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+        </div>
+      </div>
+    </div>
   	<div class="footer">
   		<span class="pull-left">
   			<a  ng-click="toggleList()"><span class="glyphicon glyphicon-th-list"></span></a>
         <select ng-model="color" ng-options="col as col for col in colors"></select>
+        <a  ng-click="toggleImage()"><span class="glyphicon glyphicon-picture"></span></a>
   		</span>
   		<span class="note-interface-pull-right">
   			<button class="btn btn-default btn-xs" ng-click="createNote()" data-dismiss="modal">Done</button>
@@ -17,3 +34,5 @@
   	</div>
   </div>
 </div>
+
+

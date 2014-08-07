@@ -4,13 +4,16 @@
 	  	<div class="note-title">
 		  	{{note.title}}
 		  </div>
-		  <div ng-show="note.type == 'Note'" class="note-data">
+		  <div ng-show="note.type == 'Note' || note.type == 'ImageNote'" class="note-data">
 		  	{{note.data}} 
 		  </div>
 		  <div ng-show="note.type == 'ListNote'" class="note-data">
 		  	<div ng-repeat="list in note.data track by $index">
 		  		<span class="{{list.selected}}"><input type="checkbox" ng-model="list.selected">  {{list.value}} </span>	 
 		  	</div>
+		  </div>
+		  <div ng-show="note.type == 'ImageNote'" class="note-data">
+		  	<img ng-src="{{note.img}}"/>
 		  </div>
 	  </div>
 	  <div class="note-footer">
