@@ -65,6 +65,7 @@ app.controller("commonComponents", function ($scope, $rootScope) {
 		$scope.addListNote = false;
 		$scope.addImageNote = false;
 		$scope.color = 'white';
+		$('.fileinput img').remove();
 	}
 
 	$scope.prepareModal = function(index){
