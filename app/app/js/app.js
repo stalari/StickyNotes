@@ -48,7 +48,7 @@ app.controller("commonComponents", function ($scope, $rootScope) {
 			$scope.newList.pop();
 			$scope.editIndex === undefined ? $scope.notes.push({type: 'ListNote', data: $scope.newList, title: $scope.title, color: $scope.color}) : $scope.notes[$scope.editIndex] = {type: 'ListNote', data: $scope.newList, title: $scope.title, color: $scope.color};
 		}else if($scope.addImageNote){
-			$scope.editIndex === undefined ? $scope.notes.push({type: 'ImageNote', data: $scope.addNote, title: $scope.title, color: $scope.color, img: $('img').attr('src')}) : $scope.notes[$scope.editIndex] = {type: 'ImageNote', data: $scope.addNote, title: $scope.title, color: $scope.color, img: $('img').attr('src')};
+			$scope.editIndex === undefined ? $scope.notes.push({type: 'ImageNote', data: $scope.addNote, title: $scope.title, color: $scope.color, img: $('img').attr('src')}) : $scope.notes[$scope.editIndex] = {type: 'ImageNote', data: $scope.addNote, title: $scope.title, color: $scope.color, img: $('.modal img').attr('src')};
 		}else{
 			$scope.editIndex === undefined ? $scope.notes.push({type: 'Note', data: $scope.addNote, title: $scope.title, color: $scope.color}) : $scope.notes[$scope.editIndex] = {type: 'Note', data: $scope.addNote, title: $scope.title, color: $scope.color};
 		}
