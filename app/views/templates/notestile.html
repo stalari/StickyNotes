@@ -1,5 +1,5 @@
 <div class="inner-views">
-    <div class="note" ng-repeat="note in notes track by $index" ng-class="[note.color, tile]">
+    <div class="note" ng-repeat="note in notes track by $index" ng-class="[note.color,tile]" >
         <div class="note-body" data-toggle="modal" data-target="#editNote" ng-click="prepareModal($index)">
             <div ng-show="note.type == 'ImageNote'" class="note-data" style="padding: 0px">
                 <img ng-src="{{note.img}}"/>

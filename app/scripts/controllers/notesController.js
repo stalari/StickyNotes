@@ -11,11 +11,18 @@ angular.module('stickyNotesApp')
     .controller("notesController",function ($scope, $rootScope) {
         $scope.addListNote = false;
         $scope.editIndex = undefined;
-        $scope.color = 'white';
-        $scope.colors = ['white', 'blue', 'green', 'orange', 'yellow'];
+        $scope.input = {'color': 0};
         $scope.newList = [{value: '', selected: false}];
         $scope.notes = JSON.parse(localStorage.getItem("stickyNotesApp")) || [];
+        $scope.colorInspirationClasses = [
+            'grapefruit', 'bittersweet', 'sunflower', 'grass',
+            'mint', 'aqua', 'bluejeans', 'lavender',
+            'pinkrose', 'lightgray', 'mediumgray', 'darkgray'
+        ];
 
+        $scope.highlight = function(a) {
+            $scope.color = $scope.colorInspirationClasses[a];
+        };
         $scope.createNote = function(){
             if($scope.addListNote){
                 $scope.newList.pop();
@@ -55,7 +62,8 @@ angular.module('stickyNotesApp')
                 $scope.newList = $scope.notes[index].data;
             }
             $scope.title =  $scope.notes[index].title;
-            $scope.color =  $scope.notes[index].color;
+//            $scope.color =  $scope.notes[index].color;
+
         };
 
         $scope.toggleList = function(){
@@ -98,4 +106,22 @@ angular.module('stickyNotesApp')
                 $scope.isImageNote = true;
             }
         };
+
+
     });
+
+angular.module('stickyNotesApp').directive("colorInspiration", function() {
+    return {
+        scope: {val: '=ngModel'},
+        link: function(scope, element, attrs, ngModel) {
+
+            scope.$watch(val, function(newValue, oldValue) {
+                //console.log("watched it", scope.val);
+                if (element.hasClass(oldValue)) {
+                    element.removeClass(oldValue);
+                }
+                element.addClass(newValue);
+            });
+        }
+    }
+});
