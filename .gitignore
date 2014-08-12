@@ -1,6 +1,10 @@
 .DS_Store
+.sass-cache
+dist
+.idea
+.tmp
 node_modules
-app/components
+bower_components
 /
 .settings/
 

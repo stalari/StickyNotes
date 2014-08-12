@@ -235,7 +235,8 @@ div[data-placeholder]:not([data-div-placeholder-content])::before {
   transition-duration: .218s;
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  vertical-align: top
+  vertical-align: top;
+  background-color: #ffffff;
 }
 
 .add-note input[type='text'] {
@@ -374,26 +375,6 @@ div[data-placeholder]:not([data-div-placeholder-content])::before {
   width: 626px;
 }
 
-.white {
-  background-color: white;
-}
-
-.blue {
-  background-color: #92E4C9;
-}
-
-.green {
-  background-color: #C9EA5D;
-}
-
-.orange {
-  background-color: #FFC94E;
-}
-
-.yellow {
-  background-color: #F1F14E;
-}
-
 select {
   -moz-appearance: none;
   background: none repeat scroll 0 0 #f8f8f8;
@@ -413,4 +394,158 @@ img {
   vertical-align: middle;
   width: 100%;
 }
+
+div {
+  font-family: Tahoma, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.target {
+  float:left;
+  width: 480px;
+  height:180px;
+  line-height: 160px;
+  margin: 12px 24px;
+  box-shadow: 2px 2px 4px #ccc;
+  border: 2px solid;
+  border-radius: 8px;
+  font-size: 4em;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+/*** Colorpicker ***/
+
+div.palette {
+  width: auto;
+  margin: 20px 2px;
+  position: absolute;
+  border: 1px solid;
+  background-color: white;
+  box-shadow: 0 1px 2px #ccc;
+}
+
+div.palette p {
+  margin: 0 0 0;
+  height: 25px;
+}
+
+.palette span {
+  display: inline-block;
+  margin: 0 2px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid;
+  cursor: pointer;
+  box-shadow: 0 1px 2px #ccc;
+}
+
+.highlights span {
+  border-radius: 4px;
+}
+
+.grapefruit {
+  background-color: #ED5565;
+  border-color: #DA4453;
+  color: #DA4453;
+}
+
+.bittersweet {
+  background-color: #FC6E51;
+  border-color: #E9573F;
+  color: #E9573F;
+}
+
+.sunflower {
+  background-color: #FFCE54;
+  border-color: #F6BB42;
+  color: #F6BB42;
+}
+
+.grass {
+  background-color: #A0D468;
+  border-color: #8CC152;
+  color: #8CC152;
+}
+
+.mint {
+  background-color: #48CFAD;
+  border-color: #37BC9B;
+  color: #37BC9B;
+}
+
+.aqua {
+  background-color: #4FC1E9;
+  border-color: #3BAFDA;
+  color: #3BAFDA;
+}
+
+.bluejeans {
+  background-color: #5D9CEC;
+  border-color: #4A89DC;
+  color: #4A89DC;
+}
+
+.lavender {
+  background-color: #AC92EC;
+  border-color: #967ADC;
+  color: #967ADC;
+}
+
+.pinkrose {
+  background-color: #EC87C0;
+  border-color: #D770AD;
+  color: #D770AD;
+}
+
+.lightgray {
+  background-color: #F5F7FA;
+  border-color: #E6E9ED;
+  color: #E6E9ED;
+}
+
+.mediumgray {
+  background-color: #CCD1D9;
+  border-color: #AAB2BD;
+  color: #AAB2BD;
+}
+
+.darkgray {
+  background-color: #656D78;
+  border-color: #434A54;
+  color: #434A54;
+}
+
+/***Colorpicker **/
+
+.note-remainder, .note-list, .note-default-image, .note-colorpicker {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+.note-remainder {
+  background: url("/images/sticky-notes-sprite.png")  0px 0px no-repeat transparent;
+  margin-left: 10px;
+}
+
+.note-colorpicker {
+  background: url("/images/sticky-notes-sprite.png") -30px 0px no-repeat transparent;
+}
+
+.note-default-image {
+  background: url("/images/sticky-notes-sprite.png") -58px 0px no-repeat transparent;
+}
+
+.note-list {
+  background: url("/images/sticky-notes-sprite.png") -86px 0px no-repeat transparent;
+}
+
+
+
+
+
+
 
