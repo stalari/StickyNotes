@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc function
  * @name stickyNotesApp.directive:NotesTile
@@ -7,10 +5,10 @@
  * # NotesTile directive
  */
 
-angular.module('stickyNotesApp')
-    .directive('notesTile', function(){
-    return {
-        restrict: 'AE',
-        templateUrl: "views/templates/notestile.html"
-    }
+sn.directive('notesTile', function(){
+     'use strict';
+        return {
+            restrict: 'AE',
+            templateUrl: "views/templates/notestile.html"
+        }
 });

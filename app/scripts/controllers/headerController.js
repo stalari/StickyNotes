@@ -7,8 +7,7 @@
  * # HeaderController
  * Controller of the stickyNotesApp
  */
-angular.module('stickyNotesApp')
-    .controller('headerController', function ($scope, $rootScope) {
+sn.controller('headerController', function ($scope, $rootScope) {
         $rootScope.tile = 'gridview';
         $scope.showHideSideBar = function(){
             $('#sidebar').css('margin-left', '0px');

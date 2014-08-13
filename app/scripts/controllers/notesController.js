@@ -7,10 +7,9 @@
  * # NotesController
  * Controller of the stickyNotesApp
  */
-angular.module('stickyNotesApp')
-    .controller("notesController",function ($scope, $rootScope) {
+sn.controller("notesController",function ($scope, $rootScope) {
         $scope.addListNote = false;
-        $scope.editIndex = undefined;
+        $scope.editIndex;
         $scope.input = {'color': 0};
         $scope.newList = [{value: '', selected: false}];
         $scope.notes = JSON.parse(localStorage.getItem("stickyNotesApp")) || [];
@@ -20,8 +19,8 @@ angular.module('stickyNotesApp')
             'pinkrose', 'lightgray', 'mediumgray', 'darkgray'
         ];
 
-        $scope.highlight = function(a) {
-            $scope.color = $scope.colorInspirationClasses[a];
+        $scope.highlight = function(color) {
+            $scope.color = color;
         };
         $scope.createNote = function(){
             if($scope.addListNote){
@@ -110,18 +109,4 @@ angular.module('stickyNotesApp')
 
     });
 
-angular.module('stickyNotesApp').directive("colorInspiration", function() {
-    return {
-        scope: {val: '=ngModel'},
-        link: function(scope, element, attrs, ngModel) {
 
-            scope.$watch(val, function(newValue, oldValue) {
-                //console.log("watched it", scope.val);
-                if (element.hasClass(oldValue)) {
-                    element.removeClass(oldValue);
-                }
-                element.addClass(newValue);
-            });
-        }
-    }
-});

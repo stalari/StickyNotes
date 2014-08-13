@@ -16,9 +16,11 @@
                 </div>
             </div>
         </div>
-        <div class="note-footer">
-            <select ng-model="note.color" ng-change="updateNotes()" class="pull-left" ng-options="col for col in colors"></select>
-            <a ng-click="deleteNote($index)" class="pull-right"><span class="glyphicon glyphicon-trash"></span></a>
+        <div class="note-tile-footer">
+            <span class="note-tile-remainder" title="Remainder"></span>
+            <span color-inspiration class="note-tile-colorpicker"></span>
+            <span class="note-tile-archive" title="Archive"></span>
+            <a ng-click="deleteNote($index)"><span class="note-tile-trash"></span></a>
         </div>
     </div>
 </div>

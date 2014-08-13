@@ -25,13 +25,15 @@ Clone the repository:
 	
 Run the following to install the AngularJS generator:
 
-  sudo npm install
-	sudo npm install -g generator-angular
+    sudo npm install
+
+    sudo npm install -g generator-angular
 
 
 Goto the project root directory and run bower to install all the Bootstrap Javascript into Angular!
 
 	bower install angular-bootstrap --save
+
 	bower update
 
 
