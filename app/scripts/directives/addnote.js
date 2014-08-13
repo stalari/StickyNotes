@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc function
  * @name stickyNotesApp.directive:AddNote
@@ -7,8 +5,8 @@
  * # AddNote directive
  */
 
-angular.module('stickyNotesApp')
-    .directive('addNote', function(){
+sn.directive('addNote', function(){
+      'use strict';
         return {
             restrict: 'AE',
             templateUrl: "views/templates/addnote.html"

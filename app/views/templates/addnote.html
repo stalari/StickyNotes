@@ -20,15 +20,8 @@
         <div class="add-note-footer">
             <div class="add-note-footer-inner">
             <span class="pull-left add-note-footer-toolbar">
-                <span class="note-remainder"></span>
-                <span class="note-colorpicker" ng-mouseenter="showPalette = true" ng-mouseleave="showPalette = false">
-                    <div class="highlights palette" ng-show="showPalette">
-                        <p>
-                            <span ng-repeat="c in colorInspirationClasses" class="{{c}}" ng-click="highlight($index)"></span>
-                        </p>
-                    </div>
-                </span>
-
+                <span class="note-remainder" title="Remainder"></span>
+                <span color-inspiration class="note-colorpicker"></span>
                 <a ng-click="toggleList()"><span class="note-list"></span></a>
                 <a ng-click="toggleImage()"><span style="padding-left: 10px"  class="note-default-image"></span></a>
             </span>

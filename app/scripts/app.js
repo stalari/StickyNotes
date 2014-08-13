@@ -8,19 +8,19 @@
  *
  * Main module of the application.
  */
-angular
-  .module('stickyNotesApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/notes.html',
-        controller: 'notesController'
-      });
-  });
+
+var sn = angular.module('stickyNotesApp', [
+            'ngAnimate',
+            'ngCookies',
+            'ngResource',
+            'ngRoute',
+            'ngSanitize',
+            'ngTouch'
+          ])
+          .config(function ($routeProvider) {
+            $routeProvider
+              .when('/', {
+                templateUrl: 'views/notes.html',
+                controller: 'notesController'
+              });
+          });
