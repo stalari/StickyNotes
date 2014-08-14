@@ -1,9 +1,9 @@
-<div class="add-note" ng-class="color">
+<div class="add-note" ng-controller="addNoteController" ng-class="color">
     <div class="add-note-inner">
         <div class="container">
             <div class="fileinput fileinput-new" data-provides="fileinput" data-ng-show="isImageNote">
                 <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
-                    <img ng-src="{{noteImg}}"></img>
+                    <img ng-src="{{noteImg}}" />
                 </div>
                 <div>
                     <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..." id="test"></span>
@@ -11,8 +11,8 @@
                 </div>
             </div>
             <div class="note-title"><input type="text" class="note-title-input" ng-model="title" placeholder="Title"/></div>
-            <div class="note-data" data-ng-hide="addListNote"><input type="text" class="note-data-input" ng-model="addNote" placeholder="Add Note"/></div>
-            <div class="note-data" data-ng-show="addListNote"  ng-repeat="list in newList track by $index">
+            <div class="note-data" data-ng-hide="isListNote"><input type="text" class="note-data-input" ng-model="addNote" placeholder="Add Note"/></div>
+            <div class="note-data" data-ng-show="isListNote"  ng-repeat="list in newList track by $index">
                 <input type="checkbox" ng-model="list.selected"/><span style="padding-left: 5px"><input type="text" style="width: 450px; border: none; outline: none;" class="{{list.selected}}" ng-model="list.value" placeholder="Add List Note"/></span>
                 <span ng-click="removeList($index)" class="glyphicon glyphicon-remove"></span>
             </div>

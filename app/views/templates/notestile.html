@@ -1,5 +1,5 @@
-<div class="inner-views">
-    <div class="note" ng-repeat="note in notes track by $index" ng-class="[note.color,tile]" >
+<div class="inner-views" ng-controller="tileListController">
+    <div class="note" ng-repeat="note in notes track by $index" ng-class="[note.color,tile]"  >
         <div class="note-body" data-toggle="modal" data-target="#editNote" ng-click="prepareModal($index)">
             <div ng-show="note.type == 'ImageNote'" class="note-data" style="padding: 0px">
                 <img ng-src="{{note.img}}"/>
@@ -18,7 +18,7 @@
         </div>
         <div class="note-tile-footer">
             <span class="note-tile-remainder" title="Remainder"></span>
-            <span color-inspiration class="note-tile-colorpicker"></span>
+            <span color-inspiration class="note-tile-colorpicker" is-note-tile="true"></span>
             <span class="note-tile-archive" title="Archive"></span>
             <a ng-click="deleteNote($index)"><span class="note-tile-trash"></span></a>
         </div>
@@ -26,8 +26,8 @@
 </div>
 
 <div class="modal fade" id="editNote" tabindex="-1" role="dialog" aria-labelledby="editNoteLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" ng-class="color">
+    <div class="modal-dialog modal-lg" ng-class="color">
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" ng-click="clearValues()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
