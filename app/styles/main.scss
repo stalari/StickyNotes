@@ -531,7 +531,8 @@ div.palette p {
 
 .note-remainder, .note-list, .note-default-image, .note-colorpicker,
 .note-tile-trash, .note-tile-colorpicker, .note-tile-remainder,
-.note-tile-archive, .align-justify, .note-list-view, .note-grid-view {
+.note-tile-archive, .align-justify, .note-list-view, .note-grid-view,
+.notes-home, .note-archive, .note-trash {
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -541,7 +542,7 @@ div.palette p {
 
 .note-remainder {
   background: url("/images/sticky-notes-sprite.png")  0px 0px no-repeat transparent;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 .note-colorpicker {
@@ -587,6 +588,21 @@ div.palette p {
 
 .note-grid-view {
   background: url("/images/sticky-notes-sprite.png")  -344px 0px no-repeat transparent;
+  margin-left: 0px;
+}
+
+.notes-home {
+  background: url("/images/sticky-notes-sprite.png")  -288px 0px no-repeat transparent;
+  margin-left: 0px;
+}
+
+.note-archive {
+  background: url("/images/sticky-notes-sprite.png")  -344px 0px no-repeat transparent;
+  margin-left: 0px;
+}
+
+.note-trash {
+  background: url("/images/sticky-notes-sprite.png")  -374px 0px no-repeat transparent;
   margin-left: 0px;
 }
 
